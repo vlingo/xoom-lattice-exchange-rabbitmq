@@ -52,7 +52,8 @@ public class QueueFactory {
    * Answers a new instance of a Queue with the name name. The underlying
    * queue is durable, is non-exclusive, and not auto-deleted.
    * @param connectionSettings the ConnectionSettings
-   * @param name the String name of the queue
+   * @param exchangeName the String name of the exchange
+   * @param queueName the String name of the queue
    * @return Queue
    */
   public static Queue durableInstance(final ConnectionSettings connectionSettings, final String exchangeName, final String queueName) {
@@ -63,7 +64,8 @@ public class QueueFactory {
    * Answers a new instance of a Queue with the name name. The underlying
    * queue is durable, exclusive, and not auto-deleted.
    * @param connectionSettings the ConnectionSettings
-   * @param name the String name of the queue
+   * @param exchangeName the String name of the exchange
+   * @param queueName the String name of the queue
    * @return Queue
    */
   public static Queue durableExclsuiveInstance(final ConnectionSettings connectionSettings, final String exchangeName, final String queueName) {
