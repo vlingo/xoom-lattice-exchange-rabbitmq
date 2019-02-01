@@ -11,8 +11,8 @@ services:
       - '25672:25672'
       - '15672:15672'
     environment:
-      - RABBITMQ_USERNAME=rabbit
-      - RABBITMQ_PASSWORD=hop
+      - RABBITMQ_USERNAME=guest
+      - RABBITMQ_PASSWORD=guest
       - RABBITMQ_VHOST=/
     volumes:
       - 'rabbitmq_data:/bitnami'

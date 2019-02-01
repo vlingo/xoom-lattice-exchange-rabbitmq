@@ -42,6 +42,6 @@ public class FanOutExchangeTest {
   }
 
   private ConnectionSettings settings() {
-    return ConnectionSettings.instance("localhost", ConnectionSettings.UndefinedPort, "/", "rabbit", "hop");
+    return ConnectionSettings.instance("localhost", ConnectionSettings.UndefinedPort, "/", "guest", "guest");
   }
 }
