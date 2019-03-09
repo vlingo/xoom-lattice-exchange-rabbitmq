@@ -19,7 +19,7 @@ The vlingo/lattice io.vlingo.lattice.exchange.Exchange extension for RabbitMQ.
     <dependency>
       <groupId>io.vlingo</groupId>
       <artifactId>vlingo-lattice-exchange-rabbitmq</artifactId>
-      <version>0.8.1</version>
+      <version>0.8.2</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
@@ -27,7 +27,7 @@ The vlingo/lattice io.vlingo.lattice.exchange.Exchange extension for RabbitMQ.
 
 ```gradle
 dependencies {
-    compile 'io.vlingo:vlingo-lattice-exchange-rabbitmq:0.8.1'
+    compile 'io.vlingo:vlingo-lattice-exchange-rabbitmq:0.8.2'
 }
 
 repositories {
