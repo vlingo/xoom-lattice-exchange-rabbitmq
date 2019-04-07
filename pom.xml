@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.vlingo</groupId>
   <artifactId>vlingo-lattice-exchange-rabbitmq</artifactId>
-  <version>0.8.2</version>
+  <version>0.8.3</version>
   <name>vlingo-lattice-exchange-rabbitmq</name>
   <description>The vlingo/lattice io.vlingo.lattice.exchange.Exchange extension for RabbitMQ.</description>
   <url>https://github.com/vlingo/vlingo-lattice-exchange-rabbitmq</url>
@@ -87,7 +87,7 @@
     <dependency>
       <groupId>io.vlingo</groupId>
       <artifactId>vlingo-lattice</artifactId>
-      <version>0.8.2</version>
+      <version>0.8.3</version>
     </dependency>
     <dependency>
       <groupId>com.rabbitmq</groupId>
