@@ -5,7 +5,7 @@ before_install:
 - cd vlingo-lattice && mvn install -DskipTests=true
 - cd ${TRAVIS_BUILD_DIR}
 services:
-- rabbitmq
+  - rabbitmq
 script:
 - mvn install
 deploy:
