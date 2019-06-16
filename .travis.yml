@@ -4,6 +4,8 @@ before_install:
 - git clone --depth=50 --branch=master https://github.com/vlingo/vlingo-lattice.git
 - cd vlingo-lattice && mvn install -DskipTests=true
 - cd ${TRAVIS_BUILD_DIR}
+sudo:
+  required
 services:
   - rabbitmq
 script:
