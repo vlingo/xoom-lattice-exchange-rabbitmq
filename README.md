@@ -7,7 +7,6 @@ The vlingo/lattice io.vlingo.lattice.exchange.Exchange extension for RabbitMQ. S
 - [io.vlingo.lattice.exchange.rabbitmq.ExchangeFactoryTest](https://github.com/vlingo/vlingo-lattice-exchange-rabbitmq/blob/master/src/test/java/io/vlingo/lattice/exchange/rabbitmq/ExchangeFactoryTest.java)
 - [io.vlingo.lattice.exchange.rabbitmq.FanOutExchangeTest](https://github.com/vlingo/vlingo-lattice-exchange-rabbitmq/blob/master/src/test/java/io/vlingo/lattice/exchange/rabbitmq/FanOutExchangeTest.java)
 
-
 ### Bintray
 
 ```xml
