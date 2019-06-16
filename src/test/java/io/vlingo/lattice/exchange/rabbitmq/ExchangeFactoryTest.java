@@ -26,6 +26,6 @@ public class ExchangeFactoryTest {
   }
 
   private ConnectionSettings settings() {
-    return ConnectionSettings.instance("127.0.0.1", 5672, "/", "guest", "guest");
+    return ConnectionSettings.instance("localhost", ConnectionSettings.UndefinedPort, "/", "guest", "guest");
   }
 }
