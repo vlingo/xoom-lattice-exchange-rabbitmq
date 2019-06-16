@@ -1,6 +1,6 @@
 language: java
 os: linux
-dist: trusty
+dist: xenial
 before_install:
 - cd ${TRAVIS_BUILD_DIR}/..
 - git clone --depth=50 --branch=master https://github.com/vlingo/vlingo-lattice.git
@@ -8,6 +8,9 @@ before_install:
 - cd ${TRAVIS_BUILD_DIR}
 sudo:
   required
+addons:
+  packages:
+    - rabbitmq-server
 services:
   - rabbitmq
 script:
