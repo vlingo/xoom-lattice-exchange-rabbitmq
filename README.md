@@ -36,6 +36,13 @@ repositories {
 }
 ```
 
+## Docker and Bouncing the Server Volume
+See the `rmqbounce.sh`. This shell script can be used to bounce the RabbitMQ volume named in `docker-compose.yml`:
+  `vlingo-lattice-exchange-rabbitmq`
+
+`$ ./rmqbounce.sh`
+
+
 License (See LICENSE file for full license)
 -------------------------------------------
 Copyright © 2012-2018 Vaughn Vernon. All rights reserved.
