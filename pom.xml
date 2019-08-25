@@ -96,6 +96,11 @@
       <version>0.8.7</version>
     </dependency>
     <dependency>
+      <groupId>io.vlingo</groupId>
+      <artifactId>vlingo-symbio</artifactId>
+      <version>0.8.7</version>
+    </dependency>
+    <dependency>
       <groupId>com.rabbitmq</groupId>
       <artifactId>amqp-client</artifactId>
       <version>5.6.0</version>
