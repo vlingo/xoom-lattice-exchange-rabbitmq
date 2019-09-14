@@ -25,7 +25,7 @@ See the following tests for examples:
     <dependency>
       <groupId>io.vlingo</groupId>
       <artifactId>vlingo-lattice-exchange-rabbitmq</artifactId>
-      <version>0.8.8</version>
+      <version>0.8.9</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
@@ -33,7 +33,7 @@ See the following tests for examples:
 
 ```gradle
 dependencies {
-    compile 'io.vlingo:vlingo-lattice-exchange-rabbitmq:0.8.8'
+    compile 'io.vlingo:vlingo-lattice-exchange-rabbitmq:0.8.9'
 }
 
 repositories {
