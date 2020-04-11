@@ -7,18 +7,13 @@
 
 package io.vlingo.lattice.exchange.rabbitmq;
 
-import java.util.concurrent.ConcurrentLinkedQueue;
-
-import io.vlingo.actors.testkit.TestUntil;
 import io.vlingo.lattice.exchange.ExchangeReceiver;
 
 public class TextMessageReceiver implements ExchangeReceiver<String> {
   private final Object lock;
-  private final ConcurrentLinkedQueue<Object> results;
-  private final TestUntil until;
+  private final FanOutExchangeTest.ConcurrentLinkedQueueResults results;
 
-  public TextMessageReceiver(final TestUntil until, final ConcurrentLinkedQueue<Object> results) {
-    this.until = until;
+  public TextMessageReceiver(final FanOutExchangeTest.ConcurrentLinkedQueueResults results) {
     this.results = results;
     this.lock = new Object();
   }
@@ -26,8 +21,7 @@ public class TextMessageReceiver implements ExchangeReceiver<String> {
   @Override
   public void receive(final String message) {
     synchronized (lock) {
-      results.add(message);
-      until.happened();
+      results.access.writeUsing("answers", message);
     }
   }
 }
