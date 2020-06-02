@@ -2,8 +2,9 @@
 
 [![Javadocs](http://javadoc.io/badge/io.vlingo/vlingo-lattice-exchange-rabbitmq.svg?color=brightgreen)](http://javadoc.io/doc/io.vlingo/vlingo-lattice-exchange-rabbitmq) [![Build Status](https://travis-ci.org/vlingo/vlingo-lattice-exchange-rabbitmq.svg?branch=master)](https://travis-ci.org/vlingo/vlingo-lattice-exchange-rabbitmq) [ ![Download](https://api.bintray.com/packages/vlingo/vlingo-platform-java/vlingo-lattice-exchange-rabbitmq/images/download.svg) ](https://bintray.com/vlingo/vlingo-platform-java/vlingo-lattice-exchange-rabbitmq/_latestVersion) [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/vlingo-platform-java/lattice)
 
+Docs: https://docs.vlingo.io/vlingo-lattice/exchange
 
-The vlingo/PLATFORM implementation of vlingo/lattice Exchange for RabbitMQ.
+The VLINGO/PLATFORM implementation of VLINGO/LATTICE Exchange for RabbitMQ.
 
 See the primary protocol and related ones:
 - [io.vlingo.lattice.exchange.Exchange](https://github.com/vlingo/vlingo-lattice/blob/master/src/main/java/io/vlingo/lattice/exchange/Exchange.java)
@@ -25,7 +26,7 @@ See the following tests for examples:
     <dependency>
       <groupId>io.vlingo</groupId>
       <artifactId>vlingo-lattice-exchange-rabbitmq</artifactId>
-      <version>1.2.9</version>
+      <version>1.3.0</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
@@ -33,7 +34,7 @@ See the following tests for examples:
 
 ```gradle
 dependencies {
-    compile 'io.vlingo:vlingo-lattice-exchange-rabbitmq:1.2.9'
+    compile 'io.vlingo:vlingo-lattice-exchange-rabbitmq:1.3.0'
 }
 
 repositories {
