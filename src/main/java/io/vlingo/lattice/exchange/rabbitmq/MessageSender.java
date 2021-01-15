@@ -27,7 +27,7 @@ public class MessageSender implements ExchangeSender<Message> {
    * Constructs my default state.
    * @param brokerConnection the BrokerConnection for which my messageProducer is created
    */
-  MessageSender(final BrokerConnection brokerConnection) {
+  public MessageSender(final BrokerConnection brokerConnection) {
     this.messageProducer = MessageProducer.instance(brokerConnection);
   }
 }
