@@ -9,9 +9,6 @@ package io.vlingo.lattice.exchange.rabbitmq;
 
 import java.io.IOException;
 
-import com.rabbitmq.client.AMQP.BasicProperties;
-import com.rabbitmq.client.MessageProperties;
-
 import io.vlingo.lattice.exchange.ExchangeException;
 import io.vlingo.lattice.exchange.MessageParameters;
 
@@ -54,7 +51,7 @@ class MessageProducer {
 
     try {
       brokerConnection.channel().basicPublish(brokerConnection.exchangeName(), brokerConnection.queueName(),
-              binaryDurability(), binaryMessage);
+              MessageParametersMapper.from(messageParameters), binaryMessage);
     } catch (IOException e) {
       throw new ExchangeException("Failed to send message to channel because: " + e.getMessage(), e);
     }
@@ -76,7 +73,7 @@ class MessageProducer {
 
     try {
       brokerConnection.channel().basicPublish(brokerConnection.exchangeName(), routingKey,
-              binaryDurability(), binaryMessage);
+              MessageParametersMapper.from(messageParameters), binaryMessage);
     } catch (IOException e) {
       throw new ExchangeException("Failed to send message to channel because: " + e.getMessage(), e);
     }
@@ -96,7 +93,8 @@ class MessageProducer {
     check(messageParameters);
 
     try {
-      brokerConnection.channel().basicPublish(exchange, routingKey, binaryDurability(), binaryMessage);
+      brokerConnection.channel().basicPublish(exchange, routingKey,
+              MessageParametersMapper.from(messageParameters), binaryMessage);
     } catch (IOException e) {
       throw new ExchangeException("Failed to send message to channel because: " + e.getMessage(), e);
     }
@@ -125,14 +123,5 @@ class MessageProducer {
         throw new IllegalArgumentException("MessageParameters must not be durable.");
       }
     }
-  }
-
-  /**
-   * Answers the binary durability BasicProperties according to the
-   * brokerChannel's durability.
-   * @return BasicProperties
-   */
-  private BasicProperties binaryDurability() {
-    return brokerConnection.durable ? MessageProperties.PERSISTENT_BASIC : null;
   }
 }
