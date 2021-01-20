@@ -16,7 +16,7 @@ import io.vlingo.lattice.exchange.ConnectionSettings;
 /**
  * Facilitates connections to the RabbitMQ message broker.
  */
-class BrokerConnection {
+public class BrokerConnection {
   /** The type of connection. */
   enum Type { Exchange, Queue };
 
