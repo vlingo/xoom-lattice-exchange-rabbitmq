@@ -166,6 +166,7 @@ class MessageConsumer {
                   .deliveryId(Long.toString(envelope.getDeliveryTag()))
                   .exchangeName(envelope.getExchange())
                   .tag(consumerTag)
+                  .typeName(properties.getType())
                   .redeliver(envelope.isRedeliver())
                   .routing(envelope.getRoutingKey());
         handle(messageListener, new Message(body, parameters));

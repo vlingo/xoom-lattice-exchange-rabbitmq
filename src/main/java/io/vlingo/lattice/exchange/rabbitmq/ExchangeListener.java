@@ -23,7 +23,7 @@ class ExchangeListener implements MessageListener {
 
   @Override
   public void handleMessage(final Message message) throws Exception {
-    exchange.forwarder().forwardToReceiver(message);
+    exchange.forwarder().forwardToAllReceivers(message);
   }
 
   //====================================
