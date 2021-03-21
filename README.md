@@ -2,9 +2,10 @@
 
 [![Javadocs](http://javadoc.io/badge/io.vlingo/vlingo-lattice-exchange-rabbitmq.svg?color=brightgreen)](http://javadoc.io/doc/io.vlingo/vlingo-lattice-exchange-rabbitmq) [![Build](https://github.com/vlingo/vlingo-lattice-exchange-rabbitmq/workflows/Build/badge.svg)](https://github.com/vlingo/vlingo-lattice-exchange-rabbitmq/actions?query=workflow%3ABuild) [ ![Download](https://api.bintray.com/packages/vlingo/vlingo-platform-java/vlingo-lattice-exchange-rabbitmq/images/download.svg) ](https://bintray.com/vlingo/vlingo-platform-java/vlingo-lattice-exchange-rabbitmq/_latestVersion) [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/vlingo-platform-java/lattice)
 
+The VLINGO XOOM platform SDK implementation of XOOM LATTICE Exchange for RabbitMQ.
+
 Docs: https://docs.vlingo.io/vlingo-lattice/exchange
 
-The VLINGO/PLATFORM implementation of VLINGO/LATTICE Exchange for RabbitMQ.
 
 See the primary protocol and related ones:
 - [io.vlingo.lattice.exchange.Exchange](https://github.com/vlingo/vlingo-lattice/blob/master/src/main/java/io/vlingo/lattice/exchange/Exchange.java)
@@ -12,6 +13,9 @@ See the primary protocol and related ones:
 See the following tests for examples:
 - [io.vlingo.lattice.exchange.rabbitmq.ExchangeFactoryTest](https://github.com/vlingo/vlingo-lattice-exchange-rabbitmq/blob/master/src/test/java/io/vlingo/lattice/exchange/rabbitmq/ExchangeFactoryTest.java)
 - [io.vlingo.lattice.exchange.rabbitmq.FanOutExchangeTest](https://github.com/vlingo/vlingo-lattice-exchange-rabbitmq/blob/master/src/test/java/io/vlingo/lattice/exchange/rabbitmq/FanOutExchangeTest.java)
+
+### Important
+If using snapshot builds [follow these instructions](https://github.com/vlingo/vlingo-platform#snapshots-repository) or you will experience failures.
 
 ### Bintray
 
