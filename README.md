@@ -14,18 +14,9 @@ See the following tests for examples:
 - [io.vlingo.lattice.exchange.rabbitmq.ExchangeFactoryTest](https://github.com/vlingo/vlingo-lattice-exchange-rabbitmq/blob/master/src/test/java/io/vlingo/lattice/exchange/rabbitmq/ExchangeFactoryTest.java)
 - [io.vlingo.lattice.exchange.rabbitmq.FanOutExchangeTest](https://github.com/vlingo/vlingo-lattice-exchange-rabbitmq/blob/master/src/test/java/io/vlingo/lattice/exchange/rabbitmq/FanOutExchangeTest.java)
 
-### Important
-If using snapshot builds [follow these instructions](https://github.com/vlingo/vlingo-platform#snapshots-repository) or you will experience failures.
-
-### Bintray
+### Installation
 
 ```xml
-  <repositories>
-    <repository>
-      <id>jcenter</id>
-      <url>https://jcenter.bintray.com/</url>
-    </repository>
-  </repositories>
   <dependencies>
     <dependency>
       <groupId>io.vlingo</groupId>
@@ -39,10 +30,6 @@ If using snapshot builds [follow these instructions](https://github.com/vlingo/v
 ```gradle
 dependencies {
     compile 'io.vlingo:vlingo-lattice-exchange-rabbitmq:1.5.2'
-}
-
-repositories {
-    jcenter()
 }
 ```
 
