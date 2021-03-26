@@ -1,6 +1,6 @@
 # vlingo-lattice-exchange-rabbitmq
 
-[![Javadocs](http://javadoc.io/badge/io.vlingo/vlingo-lattice-exchange-rabbitmq.svg?color=brightgreen)](http://javadoc.io/doc/io.vlingo/vlingo-lattice-exchange-rabbitmq) [![Build](https://github.com/vlingo/vlingo-lattice-exchange-rabbitmq/workflows/Build/badge.svg)](https://github.com/vlingo/vlingo-lattice-exchange-rabbitmq/actions?query=workflow%3ABuild) [ ![Download](https://api.bintray.com/packages/vlingo/vlingo-platform-java/vlingo-lattice-exchange-rabbitmq/images/download.svg) ](https://bintray.com/vlingo/vlingo-platform-java/vlingo-lattice-exchange-rabbitmq/_latestVersion) [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/vlingo-platform-java/lattice)
+[![Javadocs](http://javadoc.io/badge/io.vlingo/vlingo-lattice-exchange-rabbitmq.svg?color=brightgreen)](http://javadoc.io/doc/io.vlingo/vlingo-lattice-exchange-rabbitmq) [![Build](https://github.com/vlingo/vlingo-lattice-exchange-rabbitmq/workflows/Build/badge.svg)](https://github.com/vlingo/vlingo-lattice-exchange-rabbitmq/actions?query=workflow%3ABuild) [![Download](https://img.shields.io/maven-central/v/io.vlingo/vlingo-lattice-exchange-rabbitmq?label=maven)](https://search.maven.org/artifact/io.vlingo/vlingo-lattice-exchange-rabbitmq) [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/vlingo-platform-java/lattice)
 
 The VLINGO XOOM platform SDK implementation of XOOM LATTICE Exchange for RabbitMQ.
 
