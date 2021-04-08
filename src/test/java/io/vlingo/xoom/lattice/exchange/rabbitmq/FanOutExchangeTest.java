@@ -1,16 +1,16 @@
-package io.vlingo.lattice.exchange.rabbitmq;
+package io.vlingo.xoom.lattice.exchange.rabbitmq;
 
 import static org.junit.Assert.assertEquals;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.function.Consumer;
 
-import io.vlingo.actors.testkit.AccessSafely;
+import io.vlingo.xoom.actors.testkit.AccessSafely;
 import org.junit.Test;
 
-import io.vlingo.lattice.exchange.ConnectionSettings;
-import io.vlingo.lattice.exchange.Covey;
-import io.vlingo.lattice.exchange.Exchange;
+import io.vlingo.xoom.lattice.exchange.ConnectionSettings;
+import io.vlingo.xoom.lattice.exchange.Covey;
+import io.vlingo.xoom.lattice.exchange.Exchange;
 
 public class FanOutExchangeTest {
 

@@ -5,9 +5,9 @@
 // was not distributed with this file, You can obtain
 // one at https://mozilla.org/MPL/2.0/.
 
-package io.vlingo.lattice.exchange.rabbitmq;
+package io.vlingo.xoom.lattice.exchange.rabbitmq;
 
-import io.vlingo.lattice.exchange.ConnectionSettings;
+import io.vlingo.xoom.lattice.exchange.ConnectionSettings;
 
 /**
  * A factory that produces RabbitMQ {@code Exchange} instances.

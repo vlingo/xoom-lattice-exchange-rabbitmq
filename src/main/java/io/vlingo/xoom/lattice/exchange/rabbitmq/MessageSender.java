@@ -5,9 +5,9 @@
 // was not distributed with this file, You can obtain
 // one at https://mozilla.org/MPL/2.0/.
 
-package io.vlingo.lattice.exchange.rabbitmq;
+package io.vlingo.xoom.lattice.exchange.rabbitmq;
 
-import io.vlingo.lattice.exchange.ExchangeSender;
+import io.vlingo.xoom.lattice.exchange.ExchangeSender;
 
 /**
  * A sender of Exchange/Queue text messages.
@@ -16,7 +16,7 @@ public class MessageSender implements ExchangeSender<Message> {
   private final MessageProducer messageProducer;
 
   /*
-   * @see io.vlingo.lattice.exchange.ExchangeSender#send(java.lang.Object)
+   * @see io.vlingo.xoom.lattice.exchange.ExchangeSender#send(java.lang.Object)
    */
   @Override
   public void send(final Message message) {

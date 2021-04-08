@@ -5,7 +5,7 @@
 // was not distributed with this file, You can obtain
 // one at https://mozilla.org/MPL/2.0/.
 
-package io.vlingo.lattice.exchange.rabbitmq;
+package io.vlingo.xoom.lattice.exchange.rabbitmq;
 
 import java.util.Date;
 import java.util.Map;
@@ -13,7 +13,7 @@ import java.util.Map;
 import com.rabbitmq.client.AMQP.BasicProperties;
 import com.rabbitmq.client.MessageProperties;
 
-import io.vlingo.lattice.exchange.MessageParameters;
+import io.vlingo.xoom.lattice.exchange.MessageParameters;
 
 /**
  * A mapper from MessageParameters to RabbitMQ BasicProperties.

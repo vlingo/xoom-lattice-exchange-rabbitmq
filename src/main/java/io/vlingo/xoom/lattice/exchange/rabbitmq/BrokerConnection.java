@@ -5,13 +5,13 @@
 // was not distributed with this file, You can obtain
 // one at https://mozilla.org/MPL/2.0/.
 
-package io.vlingo.lattice.exchange.rabbitmq;
+package io.vlingo.xoom.lattice.exchange.rabbitmq;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 
-import io.vlingo.lattice.exchange.ConnectionSettings;
+import io.vlingo.xoom.lattice.exchange.ConnectionSettings;
 
 /**
  * Facilitates connections to the RabbitMQ message broker.

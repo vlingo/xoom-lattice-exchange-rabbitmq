@@ -5,12 +5,12 @@
 // was not distributed with this file, You can obtain
 // one at https://mozilla.org/MPL/2.0/.
 
-package io.vlingo.lattice.exchange.rabbitmq;
+package io.vlingo.xoom.lattice.exchange.rabbitmq;
 
-import io.vlingo.lattice.exchange.ExchangeAdapter;
-import io.vlingo.lattice.exchange.ExchangeMapper;
-import io.vlingo.lattice.exchange.MessageParameters;
-import io.vlingo.lattice.exchange.MessageParameters.DeliveryMode;
+import io.vlingo.xoom.lattice.exchange.ExchangeAdapter;
+import io.vlingo.xoom.lattice.exchange.ExchangeMapper;
+import io.vlingo.xoom.lattice.exchange.MessageParameters;
+import io.vlingo.xoom.lattice.exchange.MessageParameters.DeliveryMode;
 
 public class TextExchangeAdapter implements ExchangeAdapter<String,String,Message> {
   private ExchangeMapper<String,String> mapper = new TextExchangeMapper();

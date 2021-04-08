@@ -5,19 +5,19 @@
 // was not distributed with this file, You can obtain
 // one at https://mozilla.org/MPL/2.0/.
 
-package io.vlingo.lattice.exchange.rabbitmq;
+package io.vlingo.xoom.lattice.exchange.rabbitmq;
 
 import java.io.IOException;
 
 import com.rabbitmq.client.AMQP.Queue.DeclareOk;
 import com.rabbitmq.client.Channel;
 
-import io.vlingo.lattice.exchange.ConnectionSettings;
-import io.vlingo.lattice.exchange.Covey;
-import io.vlingo.lattice.exchange.Exchange;
-import io.vlingo.lattice.exchange.Forwarder;
-import io.vlingo.lattice.exchange.Queue;
-import io.vlingo.lattice.exchange.rabbitmq.BrokerConnection.Type;
+import io.vlingo.xoom.lattice.exchange.ConnectionSettings;
+import io.vlingo.xoom.lattice.exchange.Covey;
+import io.vlingo.xoom.lattice.exchange.Exchange;
+import io.vlingo.xoom.lattice.exchange.Forwarder;
+import io.vlingo.xoom.lattice.exchange.Queue;
+import io.vlingo.xoom.lattice.exchange.rabbitmq.BrokerConnection.Type;
 
 /**
  * A Queue for RabbitMQ via a BrokerChannel.
@@ -46,7 +46,7 @@ class BrokerQueue implements Queue {
   }
 
   /*
-   * @see io.vlingo.lattice.exchange.Queue#channel()
+   * @see io.vlingo.xoom.lattice.exchange.Queue#channel()
    */
   @Override
   @SuppressWarnings("unchecked")
@@ -55,7 +55,7 @@ class BrokerQueue implements Queue {
   }
 
   /*
-   * @see io.vlingo.lattice.exchange.Queue#connection()
+   * @see io.vlingo.xoom.lattice.exchange.Queue#connection()
    */
   @Override
   @SuppressWarnings("unchecked")

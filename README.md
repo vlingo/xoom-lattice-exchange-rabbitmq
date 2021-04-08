@@ -1,26 +1,26 @@
-# vlingo-lattice-exchange-rabbitmq
+# xoom-lattice-exchange-rabbitmq
 
-[![Javadocs](http://javadoc.io/badge/io.vlingo/vlingo-lattice-exchange-rabbitmq.svg?color=brightgreen)](http://javadoc.io/doc/io.vlingo/vlingo-lattice-exchange-rabbitmq) [![Build](https://github.com/vlingo/vlingo-lattice-exchange-rabbitmq/workflows/Build/badge.svg)](https://github.com/vlingo/vlingo-lattice-exchange-rabbitmq/actions?query=workflow%3ABuild) [![Download](https://img.shields.io/maven-central/v/io.vlingo/vlingo-lattice-exchange-rabbitmq?label=maven)](https://search.maven.org/artifact/io.vlingo/vlingo-lattice-exchange-rabbitmq) [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/vlingo-platform-java/lattice)
+[![Javadocs](http://javadoc.io/badge/io.vlingo.xoom/xoom-lattice-exchange-rabbitmq.svg?color=brightgreen)](http://javadoc.io/doc/io.vlingo.xoom/xoom-lattice-exchange-rabbitmq) [![Build](https://github.com/vlingo/xoom-lattice-exchange-rabbitmq/workflows/Build/badge.svg)](https://github.com/vlingo/xoom-lattice-exchange-rabbitmq/actions?query=workflow%3ABuild) [![Download](https://img.shields.io/maven-central/v/io.vlingo.xoom/xoom-lattice-exchange-rabbitmq?label=maven)](https://search.maven.org/artifact/io.vlingo.xoom/xoom-lattice-exchange-rabbitmq) [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/vlingo-platform-java/lattice)
 
 The VLINGO XOOM platform SDK implementation of XOOM LATTICE Exchange for RabbitMQ.
 
-Docs: https://docs.vlingo.io/vlingo-lattice/exchange
+Docs: https://docs.vlingo.io/xoom-lattice/exchange
 
 
 See the primary protocol and related ones:
-- [io.vlingo.lattice.exchange.Exchange](https://github.com/vlingo/vlingo-lattice/blob/master/src/main/java/io/vlingo/lattice/exchange/Exchange.java)
+- [io.vlingo.xoom.lattice.exchange.Exchange](https://github.com/vlingo/xoom-lattice/blob/master/src/main/java/io/vlingo/xoom/lattice/exchange/Exchange.java)
 
 See the following tests for examples:
-- [io.vlingo.lattice.exchange.rabbitmq.ExchangeFactoryTest](https://github.com/vlingo/vlingo-lattice-exchange-rabbitmq/blob/master/src/test/java/io/vlingo/lattice/exchange/rabbitmq/ExchangeFactoryTest.java)
-- [io.vlingo.lattice.exchange.rabbitmq.FanOutExchangeTest](https://github.com/vlingo/vlingo-lattice-exchange-rabbitmq/blob/master/src/test/java/io/vlingo/lattice/exchange/rabbitmq/FanOutExchangeTest.java)
+- [io.vlingo.xoom.lattice.exchange.rabbitmq.ExchangeFactoryTest](https://github.com/vlingo/xoom-lattice-exchange-rabbitmq/blob/master/src/test/java/io/vlingo/xoom/lattice/exchange/rabbitmq/ExchangeFactoryTest.java)
+- [io.vlingo.xoom.lattice.exchange.rabbitmq.FanOutExchangeTest](https://github.com/vlingo/xoom-lattice-exchange-rabbitmq/blob/master/src/test/java/io/vlingo/xoom/lattice/exchange/rabbitmq/FanOutExchangeTest.java)
 
 ### Installation
 
 ```xml
   <dependencies>
     <dependency>
-      <groupId>io.vlingo</groupId>
-      <artifactId>vlingo-lattice-exchange-rabbitmq</artifactId>
+      <groupId>io.vlingo.xoom</groupId>
+      <artifactId>xoom-lattice-exchange-rabbitmq</artifactId>
       <version>1.6.0</version>
       <scope>compile</scope>
     </dependency>
@@ -29,14 +29,14 @@ See the following tests for examples:
 
 ```gradle
 dependencies {
-    compile 'io.vlingo:vlingo-lattice-exchange-rabbitmq:1.6.0'
+    compile 'io.vlingo.xoom:xoom-lattice-exchange-rabbitmq:1.6.0'
 }
 ```
 
 ## Docker and Bouncing the Server Volume
 RabbitMQ must be running for tests. See the `rmqbounce.sh`. This shell script can be used to bounce the RabbitMQ volume named in `docker-compose.yml`:
 
-  `vlingo-lattice-exchange-rabbitmq`
+  `xoom-lattice-exchange-rabbitmq`
 
 `$ ./rmqbounce.sh`
 

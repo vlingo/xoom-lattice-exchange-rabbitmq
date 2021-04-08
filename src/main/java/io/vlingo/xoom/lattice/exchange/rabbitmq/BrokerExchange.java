@@ -5,13 +5,13 @@
 // was not distributed with this file, You can obtain
 // one at https://mozilla.org/MPL/2.0/.
 
-package io.vlingo.lattice.exchange.rabbitmq;
+package io.vlingo.xoom.lattice.exchange.rabbitmq;
 
-import io.vlingo.lattice.exchange.ConnectionSettings;
-import io.vlingo.lattice.exchange.Covey;
-import io.vlingo.lattice.exchange.Exchange;
-import io.vlingo.lattice.exchange.Forwarder;
-import io.vlingo.lattice.exchange.rabbitmq.BrokerConnection.Type;
+import io.vlingo.xoom.lattice.exchange.ConnectionSettings;
+import io.vlingo.xoom.lattice.exchange.Covey;
+import io.vlingo.xoom.lattice.exchange.Exchange;
+import io.vlingo.xoom.lattice.exchange.Forwarder;
+import io.vlingo.xoom.lattice.exchange.rabbitmq.BrokerConnection.Type;
 
 /**
  * An Exchange for RabbitMQ via a BrokerChannel.
@@ -42,7 +42,7 @@ class BrokerExchange implements Exchange {
   //====================================
 
   /*
-   * @see io.vlingo.lattice.exchange.Exchange#close()
+   * @see io.vlingo.xoom.lattice.exchange.Exchange#close()
    */
   @Override
   public void close() {
@@ -52,7 +52,7 @@ class BrokerExchange implements Exchange {
   }
 
   /*
-   * @see io.vlingo.lattice.exchange.Exchange#channel()
+   * @see io.vlingo.xoom.lattice.exchange.Exchange#channel()
    */
   @Override
   @SuppressWarnings("unchecked")
@@ -61,7 +61,7 @@ class BrokerExchange implements Exchange {
   }
 
   /*
-   * @see io.vlingo.lattice.exchange.Exchange#connection()
+   * @see io.vlingo.xoom.lattice.exchange.Exchange#connection()
    */
   @Override
   @SuppressWarnings("unchecked")
@@ -70,7 +70,7 @@ class BrokerExchange implements Exchange {
   }
 
   /*
-   * @see io.vlingo.lattice.exchange.Exchange#name()
+   * @see io.vlingo.xoom.lattice.exchange.Exchange#name()
    */
   @Override
   public String name() {
@@ -78,7 +78,7 @@ class BrokerExchange implements Exchange {
   }
 
   /*
-   * @see io.vlingo.lattice.exchange.Exchange#register(io.vlingo.lattice.exchange.Covey)
+   * @see io.vlingo.xoom.lattice.exchange.Exchange#register(io.vlingo.xoom.lattice.exchange.Covey)
    */
   @Override
   public <L, E, EX> Exchange register(final Covey<L, E, EX> covey) {
@@ -87,7 +87,7 @@ class BrokerExchange implements Exchange {
   }
 
   /*
-   * @see io.vlingo.lattice.exchange.Exchange#send(java.lang.Object)
+   * @see io.vlingo.xoom.lattice.exchange.Exchange#send(java.lang.Object)
    */
   @Override
   public <L> void send(final L local) {

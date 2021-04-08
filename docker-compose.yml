@@ -17,5 +17,5 @@ services:
     volumes:
       - 'rabbitmq'
 volumes:
-  vlingo_lattice_exchange_rabbitmq:
+  xoom_lattice_exchange_rabbitmq:
     driver: local

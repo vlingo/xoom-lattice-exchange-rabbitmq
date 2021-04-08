@@ -5,12 +5,12 @@
 // was not distributed with this file, You can obtain
 // one at https://mozilla.org/MPL/2.0/.
 
-package io.vlingo.lattice.exchange.rabbitmq;
+package io.vlingo.xoom.lattice.exchange.rabbitmq;
 
 import java.io.IOException;
 
-import io.vlingo.lattice.exchange.ConnectionSettings;
-import io.vlingo.lattice.exchange.Queue;
+import io.vlingo.xoom.lattice.exchange.ConnectionSettings;
+import io.vlingo.xoom.lattice.exchange.Queue;
 
 public class QueueFactory {
 

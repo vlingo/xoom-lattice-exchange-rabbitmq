@@ -5,9 +5,9 @@
 // was not distributed with this file, You can obtain
 // one at https://mozilla.org/MPL/2.0/.
 
-package io.vlingo.lattice.exchange.rabbitmq;
+package io.vlingo.xoom.lattice.exchange.rabbitmq;
 
-import io.vlingo.lattice.exchange.MessageParameters;
+import io.vlingo.xoom.lattice.exchange.MessageParameters;
 
 /**
  * A base message extended by concrete messages for sending through the Exchange/Queue.
