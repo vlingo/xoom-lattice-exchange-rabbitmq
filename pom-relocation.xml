@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.vlingo</groupId>
   <artifactId>vlingo-lattice-exchange-rabbitmq</artifactId>
-  <version>1.7.5</version>
+  <version>1.7.6-SNAPSHOT</version>
   <name>vlingo-lattice-exchange-rabbitmq</name>
   <description>The VLINGO XOOM Lattice io.vlingo.xoom.lattice.exchange.Exchange extension for RabbitMQ.</description>
   <url>https://github.com/vlingo/xoom-lattice-exchange-rabbitmq</url>
