@@ -1,4 +1,4 @@
-package io.vlingo.xoom.lattice.exchange.rabbitmq.implnative;
+package io.vlingo.xoom.lattice.exchange.rabbitmq.nativebuild;
 
 import io.vlingo.xoom.actors.Configuration;
 import io.vlingo.xoom.actors.World;
