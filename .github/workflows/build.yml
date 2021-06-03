@@ -36,7 +36,7 @@ jobs:
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2-repository
+          restore-keys: ${{ runner.os }}-m2-
 
       - name: Determine version
         id: version
@@ -83,7 +83,7 @@ jobs:
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2-repository
+          restore-keys: ${{ runner.os }}-m2-
 
       - name: Deploy
         run: mvn --batch-mode -DskipTests -DuseGitHubPackages -DsignArtifacts -Pgithub-releases deploy
@@ -131,7 +131,7 @@ jobs:
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2-repository
+          restore-keys: ${{ runner.os }}-m2-
 
       - name: Deploy
         run: mvn --batch-mode -DskipTests -DuseSonatype -DsignArtifacts -Pgithub-releases deploy
