@@ -29,6 +29,9 @@ class BrokerExchange implements Exchange {
   /** My forwarder. */
   private final Forwarder forwarder;
 
+  /** Whether I am active or not */
+  private final boolean active;
+
   /**
    * Answer my forwarder for internal use only.
    * @return Forwarder
@@ -46,6 +49,7 @@ class BrokerExchange implements Exchange {
    */
   @Override
   public void close() {
+    checkStatus();
     listener.close();
 
     connection.close();
@@ -57,6 +61,7 @@ class BrokerExchange implements Exchange {
   @Override
   @SuppressWarnings("unchecked")
   public <T> T channel() {
+    checkStatus();
     return (T) connection.channel();
   }
 
@@ -66,6 +71,7 @@ class BrokerExchange implements Exchange {
   @Override
   @SuppressWarnings("unchecked")
   public <T> T connection() {
+    checkStatus();
     return (T) connection;
   }
 
@@ -74,6 +80,7 @@ class BrokerExchange implements Exchange {
    */
   @Override
   public String name() {
+    checkStatus();
     return connection.name;
   }
 
@@ -82,6 +89,7 @@ class BrokerExchange implements Exchange {
    */
   @Override
   public <L, E, EX> Exchange register(final Covey<L, E, EX> covey) {
+    checkStatus();
     forwarder.register(covey);
     return this;
   }
@@ -91,6 +99,7 @@ class BrokerExchange implements Exchange {
    */
   @Override
   public <L> void send(final L local) {
+    checkStatus();
     forwarder.forwardToSender(local);
   }
 
@@ -110,7 +119,7 @@ class BrokerExchange implements Exchange {
     this.connection = new BrokerConnection(connectionSettings, Type.Exchange, name, isDurable);
     this.forwarder = new Forwarder();
     this.type = type;
-
+    this.active = true;
     try {
       this.connection.channel().exchangeDeclare(name, type, isDurable);
       this.listener = new ExchangeListener(this, name + ".self-listening-queue");
@@ -118,4 +127,47 @@ class BrokerExchange implements Exchange {
       throw new IllegalArgumentException("Failed to create/open the exchange because: " + e.getMessage(), e);
     }
   }
+
+  static BrokerExchange inactiveInstanceWithName(final String name) {
+    return new BrokerExchange(name);
+  }
+
+  /**
+   * Constructs my inactive state.
+   *
+   * @param name the String name of the exchange
+   */
+  BrokerExchange(final String name) {
+    this.connection = new BrokerConnection(null, null, name);
+    this.forwarder = null;
+    this.type = null;
+    this.listener =null;
+    this.active = false;
+  }
+
+  /*
+   * @see io.vlingo.xoom.lattice.exchange.Exchange#isActive()
+   */
+  @Override
+  public boolean isActive() {
+    return active;
+  }
+
+  private void checkStatus() {
+    if(!active) {
+      logInactivity();
+      throw new InactiveBrokerExchangeException(connection.name);
+    }
+  }
+
+  private void logInactivity() {
+    System.out.println(String.format(INACTIVITY_MESSAGE, connection.name));
+  }
+
+  private static final String INACTIVITY_MESSAGE =
+                  "======================================================================================================================= \n" +
+                  "=                                                                                                                     = \n" +
+                  "= WARNING: Cannot proceed with the requested operation. %s exchange is inactive because the Broker Connection failed. = \n" +
+                  "=                                                                                                                     = \n" +
+                  "======================================================================================================================= \n";
 }

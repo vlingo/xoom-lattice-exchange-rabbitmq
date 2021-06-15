@@ -42,8 +42,28 @@ public class ExchangeFactory {
           final ConnectionSettings connectionSettings,
           final String name,
           final boolean isDurable) {
-
     return new BrokerExchange(connectionSettings, name, "fanout", isDurable);
+  }
+
+  /**
+   * Answers a new instance of a fan-out Exchange with the name name. The
+   * underlying exchange has the isDurable quality, and is not auto-deleted.
+   * @param connectionSettings the ConnectionSettings
+   * @param name the String name of the exchange
+   * @param isDurable the boolean indicating whether or not I am durable
+   * @return BrokerExchange on success, returns an active BrokerExchange.
+   * Otherwise, an inactive BrokerExchange without propagating the
+   * connection failure exception.
+   */
+  public static BrokerExchange fanOutInstanceQuietly(
+          final ConnectionSettings connectionSettings,
+          final String name,
+          final boolean isDurable) {
+    try {
+      return fanOutInstance(connectionSettings, name, isDurable);
+    } catch (final IllegalArgumentException illegalArgumentException) {
+      return BrokerExchange.inactiveInstanceWithName(name);
+    }
   }
 
   /**

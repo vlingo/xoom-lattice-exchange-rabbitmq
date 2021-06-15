@@ -81,7 +81,7 @@ public class BrokerConnection {
    * @param name the String name of my implementor
    */
   BrokerConnection(final BrokerConnection brokerChannel, final Type type, final String name) {
-    this(brokerChannel, type, name, brokerChannel.durable);
+    this(brokerChannel, type, name, brokerChannel != null ? brokerChannel.durable : false);
   }
 
   /**
@@ -92,12 +92,12 @@ public class BrokerConnection {
    * @param isDurable the boolean indicating channel durability
    */
   BrokerConnection(final BrokerConnection brokerChannel, final Type type, final String name, final boolean isDurable) {
-    this.connectionSettings = brokerChannel.connectionSettings;
-    this.hostName = brokerChannel.hostName;
+    this.connectionSettings = brokerChannel != null ? brokerChannel.connectionSettings : null;
+    this.hostName = brokerChannel != null ? brokerChannel.hostName : null;
     this.type = type;
     this.name = name != null ? name : "";
-    this.connection = brokerChannel.connection;
-    this.channel = brokerChannel.channel;
+    this.connection = brokerChannel != null ? brokerChannel.connection : null;
+    this.channel = brokerChannel != null ? brokerChannel.channel : null;
     this.durable = isDurable;
   }
 
