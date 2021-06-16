@@ -155,19 +155,8 @@ class BrokerExchange implements Exchange {
 
   private void checkStatus() {
     if(!active) {
-      logInactivity();
       throw new InactiveBrokerExchangeException(connection.name);
     }
   }
 
-  private void logInactivity() {
-    System.out.println(String.format(INACTIVITY_MESSAGE, connection.name));
-  }
-
-  private static final String INACTIVITY_MESSAGE =
-                  "======================================================================================================================= \n" +
-                  "=                                                                                                                     = \n" +
-                  "= WARNING: Cannot proceed with the requested operation. %s exchange is inactive because the Broker Connection failed. = \n" +
-                  "=                                                                                                                     = \n" +
-                  "======================================================================================================================= \n";
 }
