@@ -125,7 +125,7 @@ public class BrokerConnection {
     // shared by a subscriber exchange and queue.
 
     try {
-      if (!closed && channel.isOpen()) {
+      if (!closed && channel != null && channel.isOpen()) {
         channel.close();
         connection.close();
       }

@@ -10,10 +10,10 @@ public class InactiveBrokerExchangeException extends RuntimeException {
 
   private static final String INACTIVITY_MESSAGE =
           "\n==========================================================================\n" +
-          "=                                                                        = \n" +
-          "= WARNING: %s exchange is inactive because the Broker Connection failed. = \n" +
-          "=                                                                        = \n" +
-          "====================================  ==================================== \n";
+          "                                                                         \n" +
+          " WARNING: %s exchange is inactive because the Broker Connection failed.  \n" +
+          "                                                                         \n" +
+          "==========================================================================\n";
 
   public InactiveBrokerExchangeException(final String exchangeName) {
     super(String.format(INACTIVITY_MESSAGE, exchangeName));

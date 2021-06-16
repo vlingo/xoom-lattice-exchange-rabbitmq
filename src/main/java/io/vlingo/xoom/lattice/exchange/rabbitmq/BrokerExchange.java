@@ -49,9 +49,9 @@ class BrokerExchange implements Exchange {
    */
   @Override
   public void close() {
-    checkStatus();
-    listener.close();
-
+    if(listener != null) {
+      listener.close();
+    }
     connection.close();
   }
 
