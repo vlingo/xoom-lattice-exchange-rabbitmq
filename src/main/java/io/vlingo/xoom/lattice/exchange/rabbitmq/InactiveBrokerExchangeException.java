@@ -9,7 +9,7 @@ package io.vlingo.xoom.lattice.exchange.rabbitmq;
 public class InactiveBrokerExchangeException extends RuntimeException {
 
   private static final String INACTIVITY_MESSAGE =
-          "========================================================================== \n" +
+          "\n==========================================================================\n" +
           "=                                                                        = \n" +
           "= WARNING: %s exchange is inactive because the Broker Connection failed. = \n" +
           "=                                                                        = \n" +
