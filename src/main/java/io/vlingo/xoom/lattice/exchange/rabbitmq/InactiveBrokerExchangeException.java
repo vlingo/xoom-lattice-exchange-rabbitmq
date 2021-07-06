@@ -4,9 +4,11 @@
 // Mozilla Public License, v. 2.0. If a copy of the MPL
 // was not distributed with this file, You can obtain
 // one at https://mozilla.org/MPL/2.0/.
+
 package io.vlingo.xoom.lattice.exchange.rabbitmq;
 
 public class InactiveBrokerExchangeException extends RuntimeException {
+  private static final long serialVersionUID = -5018416201374350407L;
 
   private static final String INACTIVITY_MESSAGE =
           "\n==========================================================================\n" +
