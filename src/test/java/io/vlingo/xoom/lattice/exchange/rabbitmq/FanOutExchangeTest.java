@@ -52,7 +52,7 @@ public class FanOutExchangeTest {
                     Message.class));
 
     assertEquals(false, exchange.shouldHandle(""));
-    assertEquals(true, exchange.shouldHandle(new Message("", MessageParameters.bare())));
+    assertEquals(true, exchange.shouldHandle(new Message("content", MessageParameters.bare())));
     exchange.close();
   }
 
