@@ -7,17 +7,12 @@
 
 package io.vlingo.xoom.lattice.exchange.rabbitmq;
 
-import java.io.IOException;
-
 import com.rabbitmq.client.AMQP.Queue.DeclareOk;
 import com.rabbitmq.client.Channel;
-
-import io.vlingo.xoom.lattice.exchange.ConnectionSettings;
-import io.vlingo.xoom.lattice.exchange.Covey;
-import io.vlingo.xoom.lattice.exchange.Exchange;
-import io.vlingo.xoom.lattice.exchange.Forwarder;
-import io.vlingo.xoom.lattice.exchange.Queue;
+import io.vlingo.xoom.lattice.exchange.*;
 import io.vlingo.xoom.lattice.exchange.rabbitmq.BrokerConnection.Type;
+
+import java.io.IOException;
 
 /**
  * A Queue for RabbitMQ via a BrokerChannel.
@@ -77,6 +72,11 @@ class BrokerQueue implements Queue {
   @Override
   public <L> void send(final L local) {
     forwarder.forwardToSender(local);
+  }
+
+  @Override
+  public boolean shouldHandle(Object exchangeMessage) {
+    return forwarder.supportExchangeMessage(exchangeMessage);
   }
 
   /**

@@ -25,5 +25,12 @@ interface MessageListener {
    * @param message the Message containing the RabbitMQ exchange message data
    * @throws Exception when any problem occurs and the message must not be acknowledged
    */
-  public abstract void handleMessage(final Message message) throws Exception;
+  void handleMessage(final Message message) throws Exception;
+
+  /**
+   * Check if this message listener can handle this message
+   * @param message the Message containing the RabbitMQ exchange message data
+   * @return true if this message listener can handle this message
+   */
+  boolean shouldHandleMessage(final Object message);
 }

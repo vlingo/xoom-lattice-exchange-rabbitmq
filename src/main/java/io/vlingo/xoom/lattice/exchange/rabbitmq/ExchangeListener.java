@@ -26,6 +26,11 @@ class ExchangeListener implements MessageListener {
     exchange.forwarder().forwardToAllReceivers(message);
   }
 
+  @Override
+  public boolean shouldHandleMessage(Object message) {
+    return exchange.shouldHandle(exchange);
+  }
+
   //====================================
   // ExchangeListener
   //====================================

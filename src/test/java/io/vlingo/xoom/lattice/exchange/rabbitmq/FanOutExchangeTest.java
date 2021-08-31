@@ -1,16 +1,16 @@
 package io.vlingo.xoom.lattice.exchange.rabbitmq;
 
-import static org.junit.Assert.assertEquals;
+import io.vlingo.xoom.actors.testkit.AccessSafely;
+import io.vlingo.xoom.lattice.exchange.ConnectionSettings;
+import io.vlingo.xoom.lattice.exchange.Covey;
+import io.vlingo.xoom.lattice.exchange.Exchange;
+import io.vlingo.xoom.lattice.exchange.MessageParameters;
+import org.junit.Test;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.function.Consumer;
 
-import io.vlingo.xoom.actors.testkit.AccessSafely;
-import org.junit.Test;
-
-import io.vlingo.xoom.lattice.exchange.ConnectionSettings;
-import io.vlingo.xoom.lattice.exchange.Covey;
-import io.vlingo.xoom.lattice.exchange.Exchange;
+import static org.junit.Assert.assertEquals;
 
 public class FanOutExchangeTest {
 
@@ -36,6 +36,23 @@ public class FanOutExchangeTest {
     assertEquals("ABC", results.access.readFrom("answers"));
     assertEquals("DEF", results.access.readFrom("answers"));
 
+    exchange.close();
+  }
+
+  @Test
+  public void testThatFanOutExchangeCanHandleMessage() {
+    final Exchange exchange = ExchangeFactory.fanOutInstance(settings(), "test-fanout", true);
+
+    exchange.register(Covey.of(
+                    new MessageSender(exchange.connection()),
+                    received -> {},
+                    new TextExchangeAdapter(),
+                    String.class,
+                    String.class,
+                    Message.class));
+
+    assertEquals(false, exchange.shouldHandle(""));
+    assertEquals(true, exchange.shouldHandle(new Message("", MessageParameters.bare())));
     exchange.close();
   }
 

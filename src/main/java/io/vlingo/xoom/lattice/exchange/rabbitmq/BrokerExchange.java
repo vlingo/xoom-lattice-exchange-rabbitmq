@@ -103,6 +103,14 @@ class BrokerExchange implements Exchange {
     forwarder.forwardToSender(local);
   }
 
+  /*
+   * @see io.vlingo.xoom.lattice.exchange.Exchange#shouldHandle(java.lang.Object)
+   */
+  @Override
+  public boolean shouldHandle(Object exchangeMessage) {
+    return forwarder.supportExchangeMessage(exchangeMessage);
+  }
+
   /**
    * Constructs my default state.
    * @param connectionSettings the ConnectionSettings

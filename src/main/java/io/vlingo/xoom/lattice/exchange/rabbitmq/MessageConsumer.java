@@ -7,16 +7,15 @@
 
 package io.vlingo.xoom.lattice.exchange.rabbitmq;
 
-import java.io.IOException;
-
 import com.rabbitmq.client.AMQP.BasicProperties;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.DefaultConsumer;
 import com.rabbitmq.client.Envelope;
 import com.rabbitmq.client.ShutdownSignalException;
-
 import io.vlingo.xoom.lattice.exchange.ExchangeException;
 import io.vlingo.xoom.lattice.exchange.MessageParameters;
+
+import java.io.IOException;
 
 /**
  * A message consumer, which facilitates receiving messages from a BrokerQueue. A
@@ -182,13 +181,15 @@ class MessageConsumer {
     }
 
     private void handle(final MessageListener messageListener, final Message message) {
-      try {
-        messageListener.handleMessage(message);
-        ack(message);
-      } catch (ExchangeException e) {
-        nack(message, e.retry());
-      } catch (Throwable t) {
-        nack(message, false);
+      if(messageListener.shouldHandleMessage(message)) {
+        try {
+          messageListener.handleMessage(message);
+          ack(message);
+        } catch (ExchangeException e) {
+          nack(message, e.retry());
+        } catch (Throwable t) {
+          nack(message, false);
+        }
       }
     }
 
