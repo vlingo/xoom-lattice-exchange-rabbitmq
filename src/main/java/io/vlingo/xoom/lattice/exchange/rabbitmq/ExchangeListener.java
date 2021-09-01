@@ -27,8 +27,8 @@ class ExchangeListener implements MessageListener {
   }
 
   @Override
-  public boolean shouldHandleMessage(Object message) {
-    return exchange.shouldHandle(exchange);
+  public boolean shouldHandleMessage(final Message message) {
+    return exchange.shouldHandle(message);
   }
 
   //====================================

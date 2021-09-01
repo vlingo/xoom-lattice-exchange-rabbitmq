@@ -32,5 +32,5 @@ interface MessageListener {
    * @param message the Message containing the RabbitMQ exchange message data
    * @return true if this message listener can handle this message
    */
-  boolean shouldHandleMessage(final Object message);
+  boolean shouldHandleMessage(final Message message);
 }
