@@ -33,14 +33,6 @@ dependencies {
 }
 ```
 
-## Docker and Bouncing the Server Volume
-RabbitMQ must be running for tests. See the `rmqbounce.sh`. This shell script can be used to bounce the RabbitMQ volume named in `docker-compose.yml`:
-
-  `xoom-lattice-exchange-rabbitmq`
-
-`$ ./rmqbounce.sh`
-
-
 License (See LICENSE file for full license)
 -------------------------------------------
 Copyright © 2012-2021 VLINGO LABS. All rights reserved.
