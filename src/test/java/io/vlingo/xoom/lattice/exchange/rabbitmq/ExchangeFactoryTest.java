@@ -7,15 +7,16 @@
 
 package io.vlingo.xoom.lattice.exchange.rabbitmq;
 
+import io.vlingo.xoom.lattice.exchange.ConnectionSettings;
+import io.vlingo.xoom.lattice.exchange.Exchange;
+import io.vlingo.xoom.lattice.exchange.rabbitmq.testcontainers.SharedRabbitMQContainer;
+import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import org.junit.Test;
-
-import io.vlingo.xoom.lattice.exchange.ConnectionSettings;
-import io.vlingo.xoom.lattice.exchange.Exchange;
-
 public class ExchangeFactoryTest {
+  private final SharedRabbitMQContainer rabbitMQContainer = SharedRabbitMQContainer.instance();
 
   @Test
   public void testThatFanOutInstanceConnects() {
@@ -26,6 +27,6 @@ public class ExchangeFactoryTest {
   }
 
   private ConnectionSettings settings() {
-    return ConnectionSettings.instance("localhost", ConnectionSettings.UndefinedPort, "/", "guest", "guest");
+    return ConnectionSettings.instance(rabbitMQContainer.getHost(), rabbitMQContainer.getMappedPort(5672), "/", "guest", "guest");
   }
 }

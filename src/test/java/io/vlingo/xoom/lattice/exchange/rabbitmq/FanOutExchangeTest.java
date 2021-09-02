@@ -1,18 +1,19 @@
 package io.vlingo.xoom.lattice.exchange.rabbitmq;
 
-import static org.junit.Assert.assertEquals;
+import io.vlingo.xoom.actors.testkit.AccessSafely;
+import io.vlingo.xoom.lattice.exchange.ConnectionSettings;
+import io.vlingo.xoom.lattice.exchange.Covey;
+import io.vlingo.xoom.lattice.exchange.Exchange;
+import io.vlingo.xoom.lattice.exchange.rabbitmq.testcontainers.SharedRabbitMQContainer;
+import org.junit.Test;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.function.Consumer;
 
-import io.vlingo.xoom.actors.testkit.AccessSafely;
-import org.junit.Test;
-
-import io.vlingo.xoom.lattice.exchange.ConnectionSettings;
-import io.vlingo.xoom.lattice.exchange.Covey;
-import io.vlingo.xoom.lattice.exchange.Exchange;
+import static org.junit.Assert.assertEquals;
 
 public class FanOutExchangeTest {
+  private final SharedRabbitMQContainer rabbitMQContainer = SharedRabbitMQContainer.instance();
 
   @Test
   public void testThatFanOutExchangeHearsItself() {
@@ -40,7 +41,7 @@ public class FanOutExchangeTest {
   }
 
   private ConnectionSettings settings() {
-    return ConnectionSettings.instance("localhost", ConnectionSettings.UndefinedPort, "/", "guest", "guest");
+    return ConnectionSettings.instance(rabbitMQContainer.getHost(), rabbitMQContainer.getMappedPort(5672), "/", "guest", "guest");
   }
 
   static class ConcurrentLinkedQueueResults {
