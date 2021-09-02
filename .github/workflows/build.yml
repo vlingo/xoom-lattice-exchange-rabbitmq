@@ -17,13 +17,6 @@ jobs:
     outputs:
       xoom_version: ${{ steps.version.outputs.xoom_version }}
 
-    services:
-      rabbitmq:
-        image: rabbitmq:3.8
-        ports:
-          - 5672:5672
-        options: --health-cmd="rabbitmq-diagnostics -q ping" --health-interval 5s --health-timeout 5s --health-retries 5
-
     steps:
       - uses: actions/checkout@v2
 
