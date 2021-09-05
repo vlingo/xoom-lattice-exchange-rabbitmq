@@ -21,7 +21,7 @@ See the following tests for examples:
     <dependency>
       <groupId>io.vlingo.xoom</groupId>
       <artifactId>xoom-lattice-exchange-rabbitmq</artifactId>
-      <version>1.8.5</version>
+      <version>1.8.6</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
@@ -29,7 +29,7 @@ See the following tests for examples:
 
 ```gradle
 dependencies {
-    compile 'io.vlingo.xoom:xoom-lattice-exchange-rabbitmq:1.8.5'
+    compile 'io.vlingo.xoom:xoom-lattice-exchange-rabbitmq:1.8.6'
 }
 ```
 
