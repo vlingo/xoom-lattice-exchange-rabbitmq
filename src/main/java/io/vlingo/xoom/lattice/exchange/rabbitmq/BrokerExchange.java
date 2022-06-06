@@ -115,6 +115,15 @@ class BrokerExchange implements Exchange {
           final String name,
           final String type,
           final boolean isDurable) {
+    this(connectionSettings, name, name + ".self-listening-queue", type, isDurable);
+  }
+
+  BrokerExchange(
+          final ConnectionSettings connectionSettings,
+          final String name,
+          final String queueListenerName,
+          final String type,
+          final boolean isDurable) {
 
     this.connection = new BrokerConnection(connectionSettings, Type.Exchange, name, isDurable);
     this.forwarder = new Forwarder();
@@ -122,7 +131,7 @@ class BrokerExchange implements Exchange {
     this.active = true;
     try {
       this.connection.channel().exchangeDeclare(name, type, isDurable);
-      this.listener = new ExchangeListener(this, name + ".self-listening-queue");
+      this.listener = new ExchangeListener(this, queueListenerName);
     } catch (Exception e) {
       throw new IllegalArgumentException("Failed to create/open the exchange because: " + e.getMessage(), e);
     }
