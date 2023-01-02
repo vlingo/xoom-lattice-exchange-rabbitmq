@@ -4,7 +4,7 @@ import org.testcontainers.containers.RabbitMQContainer;
 import org.testcontainers.utility.DockerImageName;
 
 public class SharedRabbitMQContainer extends RabbitMQContainer {
-  private static final String IMAGE_NAME = "rabbitmq:3.8";
+  private static final String IMAGE_NAME = "rabbitmq:alpine";
   private static SharedRabbitMQContainer instance;
 
   private SharedRabbitMQContainer() {
